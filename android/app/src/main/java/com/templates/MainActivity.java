@@ -1,6 +1,8 @@
 package com.templates;
 
+import android.content.Intent;
 import com.facebook.react.ReactActivity;
+import android.os.Bundle;
 
 public class MainActivity extends ReactActivity {
 
@@ -12,4 +14,11 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "templates";
   }
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
+  }
+
+
 }
