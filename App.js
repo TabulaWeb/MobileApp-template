@@ -6,6 +6,8 @@ import {Text, View, StyleSheet, Button} from 'react-native';
 
 import HomeScreen from './screens/HomeScreen';
 import DetailScreen from './screens/DetailScreen';
+import ThreeScreen from './screens/ThreeScreen';
+import FourScreen from './screens/FourScreen';
 
 const Stack = createNativeStackNavigator();
 
