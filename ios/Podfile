@@ -12,6 +12,8 @@ target 'templates' do
     :hermes_enabled => false
   )
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'templatesTests' do
     inherit! :complete
     # Pods for testing

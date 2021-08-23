@@ -4,7 +4,7 @@ import {View, Text, StyleSheet} from 'react-native';
 const DetailScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>DetailScreen</Text>
+      <Text>Контет второго экрана</Text>
     </View>
   );
 };

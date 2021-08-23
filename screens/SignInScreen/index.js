@@ -1,17 +1,18 @@
 import React from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 
-const ThreeScreen = ({navigation}) => {
+const SingInScreen = () => {
   return (
     <View style={styles.container}>
-      <Pressable onPress={() => navigation.navigate('DetailScreen')}>
-        <Text>Контет третьего экрана</Text>
+      <Text>Контет экрана входа</Text>
+      <Pressable onPress={() => console.log('Click!')}>
+        <Text>Войти</Text>
       </Pressable>
     </View>
   );
 };
 
-export default ThreeScreen;
+export default SingInScreen;
 
 const styles = StyleSheet.create({
   container: {

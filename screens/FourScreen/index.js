@@ -5,7 +5,7 @@ const FourScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Pressable onPress={() => navigation.navigate('DetailScreen')}>
-        <Text>Перейти</Text>
+        <Text>Контент четвертого экрана</Text>
       </Pressable>
     </View>
   );

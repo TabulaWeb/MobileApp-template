@@ -1,32 +1,73 @@
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 
-import {Text, View, StyleSheet, Button} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import {
+  FirstStackScreen,
+  TwoStackScreen,
+  ThreeStackScreen,
+  FourStackScreen,
+} from './screens/MainNaviation';
 
-import HomeScreen from './screens/HomeScreen';
-import DetailScreen from './screens/DetailScreen';
-import ThreeScreen from './screens/ThreeScreen';
-import FourScreen from './screens/FourScreen';
+import RootStackScreen from './screens/RootStackScreen';
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen name="DetailScreen" component={DetailScreen} />
-      </Stack.Navigator>
+      {/* <RootStackScreen /> */}
+      <Tab.Navigator
+        screenOptions={({route}) => ({
+          tabBarIcon: ({focused, color, size}) => {
+            let iconName;
+            if (route.name === 'Первый экран') {
+              iconName = focused
+                ? 'ios-information-circle'
+                : 'ios-information-circle-outline';
+            } else if (route.name === 'Второй экран') {
+              iconName = focused
+                ? 'ios-information-circle'
+                : 'ios-information-circle-outline';
+            } else if (route.name === 'Третий экран') {
+              iconName = focused
+                ? 'ios-information-circle'
+                : 'ios-information-circle-outline';
+            } else if (route.name === 'Четвертый экран') {
+              iconName = focused
+                ? 'ios-information-circle'
+                : 'ios-information-circle-outline';
+            }
+
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: 'tomato',
+          tabBarInactiveTintColor: 'gray',
+        })}>
+        <Tab.Screen
+          name="Первый экран"
+          component={FirstStackScreen}
+          options={{tabBarLabel: 'Первый экран'}}
+        />
+        <Tab.Screen
+          name="Второй экран"
+          component={TwoStackScreen}
+          options={{tabBarLabel: 'Второй экран'}}
+        />
+        <Tab.Screen
+          name="Третий экран"
+          component={ThreeStackScreen}
+          options={{tabBarLabel: 'Третий экран'}}
+        />
+        <Tab.Screen
+          name="Четвертый экран"
+          component={FourStackScreen}
+          options={{tabBarLabel: 'Четвертый экран'}}
+        />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-  },
-});
